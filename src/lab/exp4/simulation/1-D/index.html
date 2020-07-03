@@ -22,7 +22,7 @@
 		<div class = 'radioButtonDivision hide' id = 'inputButtonRadio' >
             <div class = 'randomRadioButtonDivision' ><input type = 'radio' class = 'radiobutton' name = 'radio_group' id = 'btnRandom' ><label class = 'radioText' for = 'male' >Generate Random Values</label></div><!-- end of randomRadioButtonDivision -->
             <div class = 'enterValueRadioButtonDivision' ><input type = 'radio' class = 'radiobutton' name = 'radio_group' id = 'btnManual'><label class = 'radioText' for = 'male' >Enter Values Manually</label></div><!-- end of enterValueRadioButtonDivision -->
-			<textarea class = 'arrayInputArea' name = 'firstname' placeholder = 'Enter values here in comma seperated format or seperated with space' id = 'userInput' ></textarea>
+			<textarea class = 'arrayInputArea' name = 'firstname' placeholder = 'Enter values here in comma seperated format or seperated with space' id = 'userInput' disabled="yes"></textarea>
           	<div class = 'buttonHolder' ><button class = 'buttonDisable startButton' id = 'btnStart' disabled>Start</button><button class = 'buttonDisable nextButton' id = 'btnNext' disabled>Next</button></div><!-- end of buttonHolder -->
         </div><!-- end of radioButtonDivision -->
     </div><!-- end of inputDivisionBody -->
@@ -71,4 +71,13 @@
 	</div><!-- end of resultDisplay -->
 </div><!-- end of outputDivision -->
 </body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+	$("#btnManual").click(function () {
+                $("#userInput").removeAttr("disabled");
+            });
+    $("#btnRandom").click(function(){
+    	$("#userInput").attr("disabled", "disabled");
+             });        
+</script>
 </html>
